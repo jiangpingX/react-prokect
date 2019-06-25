@@ -1,0 +1,82 @@
+.upload{
+    background-color: white;
+    .head{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 45px;/*no*/
+        padding: 0 20px;/*no*/
+        border-bottom: 1px solid #f5f5f5;
+        >span{
+            display: inline-block;
+        }
+        >span:last-child{
+            color: blue;
+        }
+    }
+    .title{
+        >input{
+            line-height: 50px;/*no*/
+            outline: none;
+            border: none;
+            padding-left: 20px;/*no*/
+            font-weight: 600;
+        }
+    }
+    .main{
+        box-sizing: border-box;
+        padding:5px 20px;/*no*/
+        >textarea{
+            border: none;
+            width: 100%;
+            color: gray;
+        }
+    }
+    .upload-pic{
+       
+        .show-pic{
+            width: 150px;/*no*/
+            height: 150px;/*no*/
+            float: left;
+            >img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .up{
+            width: 150px;/*no*/
+            height: 150px;/*no*/
+            position: relative;
+            background-color: rgba(0,0,0,0.1);
+           float: left;
+            .pic{
+                width: 150px;/*no*/
+                height: 150px;/*no*/
+                background-color: gray;
+                opacity: 0;
+            }
+            .heng{
+                width: 50px;/*no*/
+                height: 2px;/*no*/
+                background-color: rgba(0,0,0,0.3);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -25px;/*no*/
+                margin-top: -1px;/*no*/
+            }
+            .shu{
+                width: 2px;/*no*/
+                height: 50px;/*no*/
+                background-color: rgba(0,0,0,0.3);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -25px;/*no*/
+                margin-left: -1px;/*no*/
+            }
+        }
+       
+    }
+    
+}

@@ -1,0 +1,70 @@
+.myh{
+    width: 100%;
+    overflow: hidden;
+    background: white;
+    .myheader{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        height: 44px;/*no*/
+        line-height: 44px;/*no*/
+        overflow: hidden;
+        text-align: center;
+        box-sizing: border-box;
+        border-bottom: 1px solid rgba(0,0,0,.1);
+        >div{
+            display: inline-block;
+            font-size:16px; /*no*/
+        }
+        .bar-left{
+        float: left;
+        width: 44px;/*no*/
+        height: 100%;
+        margin-left: 7px;
+        a{
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height:44px ;
+            i{
+                font-size: 24px;
+            }
+        }
+        }
+        .bar-right{
+            width: 44px;/*no*/
+            float: right;
+            margin-right: 7px;
+        }
+    }
+    .my-nav{
+        margin-top: 44px;/*no*/
+        height: 44px;/*no*/
+        overflow: hidden;
+        display: flex;
+        >div{
+            flex: 1;
+            height: 44px;/*no*/
+            text-align: center;
+            >a{
+            display: inline-block;
+                width: 36px;/*no*/
+                height: 100%;
+                box-sizing: border-box;
+                color: #666;
+                >span{
+                    width: 100px;
+                    height: 100%;
+                    line-height: 44px;
+                }
+            }
+            .nav-active{
+                border-bottom: 2px solid black;/*no*/
+                color: #000;
+            }
+        }
+    }
+}

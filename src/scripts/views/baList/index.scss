@@ -1,0 +1,38 @@
+.list{
+    width: 100%;
+   overflow: hidden;
+    .head{
+        position: fixed;
+        width: 100%;
+        height: 45px;/*no*/
+        z-index: 999;
+        left: 0;
+        top: 0;
+        border: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #F0F0F0;
+        .h_left{
+            position: absolute;
+            top: 10px;/*no*/
+            left: 10px;/*no*/
+            
+            >span{
+                font-size: 22px;/*no*/
+                width: 24px;/*no*/
+                height: 24px;/*no*/
+                padding: 0;
+            }
+        }
+        .h_center{
+            font-size: 17px;/*no*/
+        }
+        .h_right{
+            position: absolute;
+            top: 8px;/*no*/
+            right: 17px;/*no*/
+            font-size: 22px;/*no*/
+        }
+    }
+}
