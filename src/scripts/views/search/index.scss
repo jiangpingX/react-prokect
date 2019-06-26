@@ -1,0 +1,106 @@
+.search {
+  .head {
+    background: #262b42;
+    height: 45px; /*no*/
+    line-height: 44px; /*no*/
+    font-size: 18px; /*no*/
+    color: #cfd8e5;
+    span {
+      display: inline-block;
+
+      i {
+        font-size: 20px;
+      }
+    }
+  }
+  .tao{
+    position: relative;
+  .sec {
+    position: relative;
+    background-color: #dadce0;
+    padding: 6px;/*no*/
+    margin: 0;
+    height: 38px;/*no*/
+    overflow: hidden;
+    .cont {
+      float: left;
+      overflow: hidden;
+      margin-right: 56px;/*no*/
+      background-color: #fff;
+        width: 80%;
+      height: 100%;
+      > input {
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .jinba {
+      position: absolute;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 15px;/*no*/
+      width: 55px;/*no*/
+      height: 38px;/*no*/
+      line-height: 38px;/*no*/
+      position: absolute;
+      top: 6px;/*no*/
+      right: 6px;/*no*/
+      text-align: center;
+      color: #3361a7;
+      background: #f2f3f5;
+      padding-top: 0;
+    }
+  }
+  .ul{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-top:none; 
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 50px;/*no*/
+    background-color: #fff;
+    >li{
+      width: 100%;
+      height: 30px;/*no*/
+      line-height: 30px;/*no*/
+      background-color: #f5f5f5;
+    }
+  }
+}
+  .tuijian{
+    font-size: 12px;/*no*/
+    margin: 9px 0 -1px;/*no*/
+    padding-left: 10px;/*no*/
+    text-shadow: 0 1px rgba(255,255,255,.75);/*no*/
+    color: #FF7F00;
+  }
+  .hot{
+    list-style: none;
+    padding: 4px;/*no*/
+    >li{
+        position: relative;
+    display: inline-block;
+    width: 50%;/*no*/
+    box-sizing: border-box;
+    padding: 4px;/*no*/
+    vertical-align: text-bottom;
+    >a{
+        height: 43px;
+    line-height: 43px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: -webkit-box;
+    border: 1px solid #eaeaea;
+    background: #F1F3F6 -webkit-gradient(linear,0 0,0 100%,from(#F3F5F8),to(#ECEEF0));
+    border-radius: 2px;
+    color: #000;
+    padding-left: 8px;
+    font-size: 15px;
+    }
+    }
+  }
+}

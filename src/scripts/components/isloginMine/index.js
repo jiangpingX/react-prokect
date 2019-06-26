@@ -1,18 +1,36 @@
 
 
 import "./index.scss";
-
+import axios from "~/utils/axios";
 export class IsloginMine extends Component{
+    state = {
+        nickname:"小呆",
+        picpath:"",
+    }
 
-   
+componentWillMount(){
+    axios.get("/react/showPerson",{params:{
+        tel:localStorage.mobile
+    }}).then(res=>{
+        this.state.nickname = res.data.result.nickname;
+        this.state.picpath = res.data.result.picpath;
+        this.setState({
+            nickname:this.state.nickname,
+            picpath:this.state.picpath
+        })
+    })
+}
 render(){
+    // console.log(this.props);
     const {
         who
       } = this.props;
     return(
         <div className="my2">
              <div data-v-b373f9d2="" className="user-info">
-          <span data-v-b373f9d2="" className="user-img" />{" "}
+          <span data-v-b373f9d2="" className="user-img"> 
+          <img src={this.state.picpath} alt=""/>
+             </span>
           <a data-v-b373f9d2="" className="user-login">
            <i className="iconfont icon-iconfontjiantou2
 "></i>
@@ -22,7 +40,7 @@ render(){
             {who}
             </p>{" "}
             <p data-v-b373f9d2="" className="user-means">
-            小呆
+            {this.state.nickname}
             </p>
           </div>
         </div>

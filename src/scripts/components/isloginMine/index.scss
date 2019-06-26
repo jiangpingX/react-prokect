@@ -14,6 +14,10 @@
         border: none;
         float: left;
         margin-right: 16px;/*no*/
+        >img{
+          width: 100%;
+          height: 100%;
+        }
       }
       > .user-login {
         width: 76px;

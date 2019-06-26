@@ -1,7 +1,7 @@
 import "./index.scss";
 import axios from "~/utils/axios";
 import { connect } from "react-redux";
-import {updatepersondata} from "~/actions";
+import {updatepersondata,changePath} from "~/actions";
 @connect(
   state=>({
     touxiang:state.touxiang
@@ -35,11 +35,8 @@ export class Personaldata extends Component {
           }
         }).then(res => {
           console.log(res);
-          this.state.touxiang  = res.data.imgUrl.replace(/public/,'http://localhost:1999');
-          this.setState({
-              touxiang:this.state.touxiang
-          })
-          console.log(this.state.touxiang)
+          let path = res.data.imgUrl.replace(/public/,'http://localhost:1999');
+          this.props.dispatch(changePath(path));
           // localStorage.userInfo = JSON.stringify({avatar:res.data.imgUrl});
         });
       };
@@ -70,7 +67,7 @@ export class Personaldata extends Component {
           sign:this.state.sign,
           picpath:this.props.touxiang
         }}))
-       
+       this.props.history.push("/home/recommond");
       }
   render() {
     //  console.log(this.props);

@@ -1,4 +1,5 @@
 .list{
+    background-color: #f5f5f5;
     width: 100%;
    overflow: hidden;
     .head{
@@ -13,6 +14,7 @@
         justify-content: center;
         align-items: center;
         border-bottom: 1px solid #F0F0F0;
+        background-color: #fff;
         .h_left{
             position: absolute;
             top: 10px;/*no*/
@@ -34,5 +36,19 @@
             right: 17px;/*no*/
             font-size: 22px;/*no*/
         }
+    }
+    .mi{
+    margin-top: 45px;/*no*/
+    min-height: 54px;/*no*/
+    position: relative;
+    background-color: #fff;
+    padding: 17px;/*no*/
+    margin-bottom: 10px;
+    >img{
+        width: 50px;/*no*/
+        height: 50px;/*no*/
+        float: left;
+        margin-right: 10px;
+    }
     }
 }

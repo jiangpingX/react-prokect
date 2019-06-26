@@ -1,7 +1,11 @@
 import "./index.scss";
 import { Tabs, WhiteSpace, Badge } from 'antd-mobile';
 import {NavLink} from "react-router-dom"
+import PropTypes from "prop-types";
 export class MyHeader extends Component {
+  search=()=>{
+    this.context.props.history.push("/search")
+  }
   state = {
     foots:[
         {txt:"推荐",path:"/home/recommond",name:"recommond"},
@@ -10,13 +14,13 @@ export class MyHeader extends Component {
     ] 
 }
   render() {
-    
+    // console.log(this.props);
     return (
       <div className="myh">
         <div className="myheader">
-          <div className="bar-left">
+          <div className="bar-left" onClick={this.search}>
             <a>
-              <i className="iconfont icon-sousuo1" />
+              <i  className="iconfont icon-sousuo1" />
             </a>
           </div>
           <div className="bar-middle">贴吧</div>
@@ -45,4 +49,8 @@ export class MyHeader extends Component {
       </div>
     );
   }
+}
+
+MyHeader.contextTypes = {
+  props:PropTypes.object
 }
