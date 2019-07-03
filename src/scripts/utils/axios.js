@@ -3,8 +3,8 @@ import axios from "axios";
 
 // 前端 数据请求  配置 header  添加 token  
 import history from "./history"
-// axios.defaults.baseURL = "http://101.132.73.191:1812/";
-axios.defaults.baseURL = "http://localhost:1999/";
+axios.defaults.baseURL = "http://101.132.73.191:1999/";
+// axios.defaults.baseURL = "http://localhost:1999/";
 // let token = "";
 axios.defaults.withCredentials = false;
 // axios.defaults.headers.common['token'] = token;   // 请求头  token 空 

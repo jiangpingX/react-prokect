@@ -1,0 +1,94 @@
+.mypage {
+  box-sizing: border-box;
+  padding-top: 45px; /*no*/
+  .head {
+    width: 100%;
+    height: 45px; /*no*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #1e2133;
+    background: #262b42;
+    line-height: 44px; /*no*/
+    font-size: 18px; /*no*/
+    text-align: center;
+    color: #cfd8e5;
+    > span {
+      display: inline-block;
+      float: left;
+    }
+    
+  }
+  .user-info {
+    padding: 17px;
+    border: 0.5px solid #f5f5f5;
+    box-sizing: border-box;
+    background: #fff;
+    
+    > .user-img {
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      border-radius: 35px;
+      background: #f0f0f0;
+      border: none;
+      float: left;
+      margin-right: 16px; /*no*/
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+    > .user-login {
+      width: 76px;
+      height: 34px;
+      line-height: 34px;
+      float: right;
+      background: #fff;
+      
+      font-size: 14px;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
+      margin-top: 18px;
+      text-align: center;
+      float: right;
+    }
+    .user-desc {
+      height: 70px;
+      .user-name {
+        height: 42px;
+        line-height: 42px;
+        color: #f0f0f0;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+      .user-means {
+        height: 20px;
+        line-height: 20px;
+        color: #f0f0f0;
+        font-size: 14px;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        max-width: 65%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+  .am-tabs-pane-wrap{
+      >div{
+          height: auto !important;/*no*/
+          display: block !important;
+          text-align: center !important;
+      }
+  }
+}

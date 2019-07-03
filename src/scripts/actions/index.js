@@ -42,3 +42,38 @@ export function getUserInfo({url,params}){
     }
    })
 }
+
+export function getSerachCon({url,params}){
+    return axios.get(url,{
+        params
+    }).then(res=>{
+        console.log(res);
+        return{
+            type:"getSerachCon",
+            searchCon:res.data.result
+        }
+    })
+}
+
+
+export function getGzdb(url){
+    return axios.get(url).then(res=>{
+        console.log(res);
+        return{
+            type:"getGzdb",
+            gzdb:res.data.result
+        }
+    })
+}
+
+export function getFtsl({url,params}){
+    return axios.get(url,{
+        params
+    }).then(res=>{
+        console.log(res);
+        return{
+            type:"getFtsl",
+            fbtz:res.data.result
+        }
+    })
+}

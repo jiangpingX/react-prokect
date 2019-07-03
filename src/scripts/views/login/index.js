@@ -73,7 +73,7 @@ export class Login extends Component{
                 // var data = $.md5(this.refs.mobile.state.value+new Date());
                 // console.log(data);
                 localStorage.setItem("mobile",this.refs.mobile.state.value)
-                this.props.history.push("/home");
+                
                 // 加密 
                 axios.post("/react/login",{
                     params:{
@@ -81,6 +81,7 @@ export class Login extends Component{
                     }
                 }).then(res=>{
                     // console.log(res);
+                    this.props.history.push("/persondata");
                 })
             }else{
                 

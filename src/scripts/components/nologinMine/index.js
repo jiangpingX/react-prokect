@@ -1,5 +1,6 @@
 
 import "./index.scss";
+import PropTypes from "prop-types";
 export class NologinMine extends Component{
 
     render(){
@@ -7,7 +8,7 @@ export class NologinMine extends Component{
             <div>
                 <div data-v-b373f9d2="" className="user-info">
           <span data-v-b373f9d2="" className="user-img" />{" "}
-          <a data-v-b373f9d2="" className="user-login">
+          <a data-v-b373f9d2="" className="user-login" onClick={()=>{this.context.props.history.push("/login")}}>
             立即登录
           </a>{" "}
           <div data-v-b373f9d2="" className="user-desc">
@@ -23,4 +24,7 @@ export class NologinMine extends Component{
             </div>
         )
     }
+}
+NologinMine.contextTypes = {
+  props:PropTypes.object
 }

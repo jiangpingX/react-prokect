@@ -4,10 +4,12 @@
 
 import {getBa} from "~/actions";
 import { connect } from "react-redux";
+import {getSerachCon} from "~/actions";
 import "./index.scss";
 @connect(
     state=>({
-        ba:state.ba
+        ba:state.ba,
+        searchCon:state.searchCon
       })
 )
 export class Search extends Component{
@@ -18,7 +20,21 @@ export class Search extends Component{
         // console.log(this.props);
         this.props.dispatch(getBa("/react/getba"))
     }
-
+    myfocus = ()=>{
+        this.refs.ul.style.display = "block";
+    }
+    myblur = ()=>{
+        this.refs.ul.style.display = "none";
+    }
+    search = ()=>{
+        var keyword = this.refs.input.value;
+        this.props.dispatch(getSerachCon({url:"/react/getSerachCon",params:{keyword}}))
+        this.refs.ul.style.display = "block";
+       
+    }
+    goba = (name)=>{
+        this.props.history.push({pathname:"/balist",query:{name}})
+    }
     render(){
 
         return(
@@ -32,20 +48,30 @@ export class Search extends Component{
                 <div className="tao">
                 <div className="sec">
                     <div className="cont">
-                        <input type="text"/>
+                        <input type="text" ref="input" onFocus={this.myfocus} onBlur={this.myblur} />
                     </div>
-                    <span className="jinba">进吧</span>
+                    <span className="jinba" onClick={this.search}>搜索</span>
                 </div>
-                <ul className="ul">
-                <li><a href="">wwwww</a></li>
+                
+                <ul className="ul" ref="ul">
+                   
+                    {
+                        this.props.searchCon&&this.props.searchCon.map((item,i)=>{
+                            return(
+                                <li onClick={()=>{this.goba(item.name)}} key={i}>{item.name}</li>
+                            )
+                        })
+                       
+                    }
                 </ul>
+                
                 </div>
                 <div className="tuijian">
                     热门推荐
                 </div>
                 <ul className="hot">
                     {
-                        this.props.ba.map((item,index)=>{
+                        this.props.ba&&this.props.ba.map((item,index)=>{
                             return(
                                 <li key={index} onClick={()=>{this.golist(item.name)}}> <a >{item.name}</a></li>
                             )

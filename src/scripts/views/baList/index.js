@@ -4,6 +4,7 @@ import "./index.scss";
 import {getUserInfo} from "~/actions";
 import { connect } from "react-redux";
 import {Invition} from "~/components/invitation";
+import {checkLogin} from "~/utils";
 @connect(
     state=>({
         userInfo:state.userInfo
@@ -16,7 +17,15 @@ export class BaList extends Component{
     }
     gofatie= ()=>{
         var name = this.props.location.query.name;
-        this.props.history.push({pathname:"/uploadtomine",query:{name}})
+        checkLogin(()=>{
+            this.props.history.push({pathname:"/uploadtomine",query:{name}})
+        }   
+        )
+        
+    }
+    godetail=(_id)=>{
+        var baming = this.props.location.query.name;
+        this.props.history.push({pathname:"/detail",query:{_id,baming}})
     }
     componentWillMount(){
         //根据吧名差帖子
@@ -31,15 +40,24 @@ export class BaList extends Component{
         this.props.dispatch(getUserInfo({url:"/react/showPerson",params:{tel:localStorage.mobile}}))
         
     }
+    componentDidUpdate(){
+        // console.log(this.refs.tip);
+        // console.log(this.state)
+         if(this.state.tiezi.length<=0&&this.state.tiezi)
+        {
+            this.refs.tip.style.display="block";
+        }
+        else{
+            this.refs.tip.style.display="none";
+        }
+    }
     render(){
-        console.log(this.props)
-        console.log(this.state)
+        // console.log(this.props)
+        // console.log(this.state)
         var name = this.props.location.query.name;
-        const {
-            nickname,
-            picpath
-            
-        } = this.props.userInfo
+        
+        
+       
         return(
             <div className="list">
                 <div className="head">
@@ -60,11 +78,12 @@ export class BaList extends Component{
                     <span> {name&&name}</span>
                     <p>wwwwwwwwwww</p>
                 </div>
+                <div ref="tip" style={{lineHeight:"30px",color:"black",fontWeight:600}}>去发布{name&&name}第一个帖子吧</div>
                 {
                     this.state.tiezi.map((item,i)=>{
                         return(
-                        <div >
-                            <Invition key={i} userInfo={this.props.userInfo} item={item} />
+                        <div onClick={()=>{this.godetail(item._id)}}>
+                            <Invition  key={i}  item={item} />
                         </div>
                         )
                     })

@@ -20,9 +20,9 @@
     }
     .touxiang{
         width: 100%;/*no*/
-        height: 230px;/*no*/
         text-align: center;
         padding: 20px 0;/*no*/
+        position: relative;
         >img{
             width: 150px;/*no*/
             height: 150px;/*no*/
@@ -31,8 +31,21 @@
             margin-bottom: 10px;/*no*/
         }
         >input{
+
             display: inline-block;
+            width: 150px;/*no*/
+            height: 40px;/*no*/
             text-align: center;
+            opacity: 0;
+        }
+        .sc{
+            width: 150px;/*no*/
+            height: 40px;/*no*/
+            line-height: 40px;/*no*/
+            position: absolute;
+            bottom: 20px;/*no*/
+            left: 50%;
+            margin-left: -75px;/*no*/
         }
     }
     .form{

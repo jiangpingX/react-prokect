@@ -15,7 +15,7 @@ export class Jinba extends Component {
   }
   render() {
     return (
-     <div>
+     <div style={{width:"100%",overflow:"hidden"}}>
        
       {this.state.show?<Islogin/>:<Nologin/>}
      </div>

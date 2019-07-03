@@ -24,7 +24,9 @@ export class Upload extends Component {
       minute=minute<10?"0"+minute:minute;
       var seconds = date.getSeconds();
       var time = year+"-"+month+"-"+day+" "+hour+":"+minute+":"+seconds;
-      axios.get("/react/fatie",{params:{title,main,picpath,baming,time}})
+      var who = localStorage.mobile;
+      console.log(picpath);
+      axios.get("/react/fatie",{params:{title,main,picpath,baming,time,who,...this.props.userInfo}})
       .then(res=>{
         this.context.props.history.push({pathname:"/balist",query:{name}})
       })
@@ -63,7 +65,7 @@ export class Upload extends Component {
       }
     }).then(res => {
       console.log(res);
-      this.state.touxiang  = res.data.imgUrl.replace(/public/,'http://localhost:1999');
+      this.state.touxiang  = res.data.imgUrl.replace(/public/,'http://101.132.73.191:1999');
       this.setState({
           touxiang:this.state.touxiang
       })

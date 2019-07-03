@@ -1,11 +1,14 @@
-.myh{
+.myhead{
     width: 100%;
     overflow: hidden;
     background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
     .myheader{
-        position: absolute;
-        top: 0;
-        left: 0;
+       
+        background-color: #fff;
         width: 100%;
         z-index: 1;
         height: 44px;/*no*/
@@ -41,12 +44,14 @@
         }
     }
     .my-nav{
-        margin-top: 44px;/*no*/
+        // margin-top: 44px;/*no*/
         height: 44px;/*no*/
         overflow: hidden;
-        display: flex;
+        // display: flex;
         >div{
-            flex: 1;
+            // flex: 1;
+            width: 33%;
+            float: left;
             height: 44px;/*no*/
             text-align: center;
             >a{

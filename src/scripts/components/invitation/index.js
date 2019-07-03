@@ -1,27 +1,43 @@
 import "./index.scss";
+import axios from "~/utils/axios";
 export class Invition extends Component {
+  state = {
+    num:0
+  }
+  componentWillMount(){
+      let _id = this.props.item._id;
+      axios.get("/react/getcomments", { params: { _id } }).then(res => {
+        // console.log(res);
+        this.state.num = res.data.result.length;
+        this.setState({
+          num:this.state.num
+        })
+      });
+  }
   render() {
-    // console.log(this.props);
+    // console.log(this.props.item);
     const{
       baming,
       title,
       picpath,
-      time
-    }=this.props.item
-    const{
-      nickname
-    }=this.props.userInfo
-    const touxiang = this.props.userInfo.picpath;
+      time,
+      nickname,
+      userpicpath
+    }=this.props.item;
+    // const{
+    //   nickname
+    // }=this.props.userInfo
+    // const touxiang = this.props.userInfo.picpath;
     
     return (
-      <div className="all">
+      <div className="all2" >
         <a className="item">
           <div className="con">
             <div className="info">
               <div className="info_1">
                 <span className="avata">
                   <img
-                    src={touxiang}
+                    src={userpicpath}
                     alt=""
                   />
                 </span>
@@ -56,7 +72,7 @@ export class Invition extends Component {
                       className="iconfont icon-yijianfankui
 "
                     />
-                    <span>1111</span>
+                    <span>{this.state.num}</span>
                   </span>
                 </div>
               </div>

@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import {updatepersondata,changePath} from "~/actions";
 @connect(
   state=>({
-    touxiang:state.touxiang
+    touxiang:state.touxiang,
+    userInfo:state.userInfo
   })
 )
 export class Personaldata extends Component {
@@ -34,12 +35,16 @@ export class Personaldata extends Component {
             mobile
           }
         }).then(res => {
-          console.log(res);
-          let path = res.data.imgUrl.replace(/public/,'http://localhost:1999');
+          // console.log(res);
+          let path = res.data.imgUrl.replace(/public/,'http://101.132.73.191:1999');
           this.props.dispatch(changePath(path));
           // localStorage.userInfo = JSON.stringify({avatar:res.data.imgUrl});
         });
       };
+      inputchange = ()=>{
+        this.refs.input.click();
+      }
+     
       nicheng = (e)=>{
         this.state.nickname = e.target.value;
         this.setState({
@@ -59,15 +64,18 @@ export class Personaldata extends Component {
         })
       }
       achieve = ()=>{
-        console.log(this.props);
+        // console.log(this.props);
         this.props.dispatch(updatepersondata({url:"/react/persondata",params:{
           tel:localStorage.mobile,
           nickname:this.state.nickname,
           sex:this.state.sex,
           sign:this.state.sign,
-          picpath:this.props.touxiang
+          userpicpath:this.props.touxiang
         }}))
        this.props.history.push("/home/recommond");
+      }
+      componentWillMount(){
+      
       }
   render() {
     //  console.log(this.props);
@@ -88,8 +96,9 @@ export class Personaldata extends Component {
             type="file"
             accept="image/*"
             onChange={this.shangchuan}
-            
+            ref="input"
           />
+          <div className="sc" onClick={this.inputchange}>上传头像</div>
         </div>
         <div className="form">
           <p>

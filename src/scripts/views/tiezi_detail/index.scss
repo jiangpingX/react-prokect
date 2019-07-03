@@ -1,0 +1,198 @@
+.detail {
+  height: 100%;
+  position: relative;
+  .head {
+    width: 100%;
+    height: 40px; /*no*/
+    box-sizing: border-box;
+    padding: 3px 10px; /*no*/
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    position: fixed;
+    background-color: #fff;
+    z-index: 2;
+    top: 0;
+    left: 0;
+   
+    .left,
+    .right {
+      display: inline-block;
+      width: 34px; /*no*/
+      height: 34px; /*no*/
+      float: left;
+      > i {
+        line-height: 34px;
+      }
+    }
+    .right {
+      float: right;
+      text-align: right;
+    }
+  }
+  .huifu {
+    padding-left: 17px; /*no*/
+    font-size: 15px; /*no*/
+    line-height: 30px;
+    border-bottom: 1px solid #f5f5f5;
+    > .ul1 {
+      width: 100%;
+      list-style: none;
+      margin-bottom: 70px;/*no*/
+      > li {
+        .all {
+          background-color: #f5f5f5;
+
+          .item {
+            background-color: #f5f5f5;
+            display: block;
+            background: #fff;
+            margin-bottom: 6px; /*no*/
+            text-align: center;
+            color: #2c3e50;
+            .con {
+              padding-top: 17px; /*no*/
+              .info {
+                margin: 0 17px; /*no*/
+                .info_1 {
+                  position: relative;
+                  text-decoration: none;
+                  width: 100%;
+                  display: flex;
+                  align-items: center;
+                  .avata {
+                    position: relative;
+                    display: inline-block;
+                    width: 35px; /*no*/
+                    height: 35px; /*no*/
+                    margin-right: 8px; /*no*/
+                    background-size: cover;
+                    border-radius: 50%;
+                    > img {
+                      width: 100%;
+                      height: 100%;
+                      border-radius: 50%;
+                    }
+                  }
+                  .avata_ri2 {
+                    flex: 1;
+                    text-align: left;
+                    > h4 {
+                      font-size: 14px; /*no*/
+                      color: #333;
+                      font-weight: 400;
+                      height: 20px;/*no*/
+                    }
+                    > div {
+                      font-size: 12px; /*no*/
+                      color: #999;
+                      height: 20px;/*no*/
+                      > .span2 {
+                        position: relative;
+                        display: inline-block;
+                        top: 1px;
+                        margin: 0 7px;
+                        width: 1px;
+                        height: 10px;
+                        background: #999;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .maincontext {
+              position: relative;
+              overflow: hidden;
+              .title {
+                line-height: 24px;/*no*/
+                font-size: 16px;
+                margin: 13px 17px 4px;/*no*/
+                word-break: break-all;
+                text-align: left;
+                color: #000;
+              }
+              .showimg {
+                position: relative;
+                margin: 0 17px; /*no*/
+                > div {
+                  display: flex;
+                  flex-flow: row nowrap;
+                  > span {
+                    width: 121.333px;
+                    height: 121.333px;
+                    display: inline-block;
+                    background-size: cover;
+                    margin-right: 8px;
+                    margin-top: 9px;
+                    background-color: #eee;
+                    > img {
+                      width: 100%;
+                      height: 100%;
+                    }
+                  }
+                  > span:last-child {
+                    margin-right: 0;
+                  }
+                }
+              }
+              .pinglun {
+                margin: 0 17px;/*no*/
+                font-size: 12px;/*no*/
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                margin-top: 50px;/*no*/
+                > div {
+                  display: flex;
+                  flex-flow: row wrap;
+                  height: 44px;
+                  line-height: 44px;
+                  > span {
+                    display: block;
+                    flex: 1;
+                    color: #666;
+                    text-align: right;
+                    i {
+                      display: inline-block;
+                      margin-right: 5px;
+                    }
+                  }
+                }
+              }
+            }
+            .baming {
+              height: 30px; /*no*/
+              text-align: left;
+              padding: 3px 17px; /*no*/
+              box-sizing: border-box;
+              margin-top: 10px;
+              > span {
+                display: inline-block;
+
+                padding: 3px 7px; /*no*/
+                font-size: 14px; /*no*/
+                background-color: rgba(0, 0, 0, 0.3);
+                color: black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .pinlun {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10px; /*no*/
+    box-sizing: border-box;
+    background-color: #fff;
+    > textarea {
+      width: 80%;
+      height: 100%;
+      border: none;
+    }
+    > button {
+    }
+  }
+}

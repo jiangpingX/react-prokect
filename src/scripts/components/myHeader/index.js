@@ -16,14 +16,14 @@ export class MyHeader extends Component {
   render() {
     // console.log(this.props);
     return (
-      <div className="myh">
+      <div className="myhead">
         <div className="myheader">
           <div className="bar-left" onClick={this.search}>
             <a>
               <i  className="iconfont icon-sousuo1" />
             </a>
           </div>
-          <div className="bar-middle">贴吧</div>
+          <div className="bar-middle">我的贴吧</div>
           <div className="bar-right">
             <a href="">
               <i className="iconfont icon-xiaoxitongzhitixinglingshenglingdang-xianxing" />

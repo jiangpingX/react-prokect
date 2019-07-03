@@ -7,6 +7,8 @@ import {BaList} from "~/views/balist";
 import {UploadtoMine} from "~/views/UploadtoMine";
 import {Personaldata} from "~/views/Personaldata"
 import {Search} from "~/views/search";
+import {Tiezidetail} from "~/views/tiezi_detail";
+import {Mypage} from "~/views/mypage";
 export class IndexView extends Component{
     render(){
         return(
@@ -37,7 +39,9 @@ export class Layout extends Component{
                 <Route path="/balist" component={BaList}/>
                 <Route path="/uploadtomine" component={UploadtoMine} />
                 <Route path="/persondata" component={Personaldata}/>
-                <Route path="/search" component={Search}></Route>
+                <Route path="/search" component={Search}/>
+                <Route path="/detail" component={Tiezidetail}/>
+                <Route path="/mypage" component={Mypage}/>
             </Switch>
         )
     }
